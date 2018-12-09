@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href=@{/css/petclinic.css} type="text/css" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<!-- Thymeleaf örneğini yapmak için bu dosyayı oluşturduk.Fakat projeyi jsp ile devam ettireceğimizden dolayı app.properties dosyasında 
+			thymeleaf'in enabled değerini false yaptık. thymeleaf artık devreden çıktı. -->
+<body>
+
+	<table>
+		<thead>
+			<tr style="font-weight: bold">
+				<td>Id</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+			</tr>
+		</thead>
+		<th:block th:each="owner:${owners}">
+			
+			<tr>
+				<td th:text="${owner.id}"></td>
+				<td th:text="${owner.firstName}"></td>
+				<td th:text="${owner.lastName}"></td>
+			</tr>
+			
+		</th:block>
+		
+	</table>
+
+</body>
+</html>
